@@ -1,14 +1,16 @@
-﻿#region ;**** 参数创建于 ACNWrapper_GUI ****
-#AutoIt3Wrapper_Icon=APK-Info.ico
-#AutoIt3Wrapper_Outfile=APK-Info.exe
-#AutoIt3Wrapper_UseUpx=n
-#AutoIt3Wrapper_UseX64=n
-#AutoIt3Wrapper_Res_Comment=Shows info about Android Package Files (APK)
-#AutoIt3Wrapper_Res_Description=APK-Info
-#AutoIt3Wrapper_Res_Fileversion=0.4.0.1
-#AutoIt3Wrapper_Res_LegalCopyright=zoster
-#AutoIt3Wrapper_Run_Tidy=y
-#endregion ;**** 参数创建于 ACNWrapper_GUI ****
+﻿#Region ;**** 参数创建于 ACNWrapper_GUI ****
+#PRE_Icon=APK-Info.ico
+#PRE_Outfile=APK-Info.exe
+#PRE_Compression=3
+#PRE_UseX64=n
+#PRE_Res_Comment=haikejishu
+#PRE_Res_Description=APK-Info
+#PRE_Res_Fileversion=0.4.0.3
+#PRE_Res_Fileversion_AutoIncrement=p
+#PRE_Res_LegalCopyright=haikejishu
+#PRE_Res_requestedExecutionLevel=None
+#PRE_Run_Tidy=y
+#EndRegion ;**** 参数创建于 ACNWrapper_GUI ****
 #include <EditConstants.au3>
 #include <GUIConstantsEx.au3>
 #include <StaticConstants.au3>
@@ -41,7 +43,7 @@ _parseApk()
 
 ;================== GUI ===========================
 
-$hGUI = GUICreate("APK-Info v1.0", 400, 494)
+$hGUI = GUICreate("APK-Info v1.1.1", 400, 494)
 $hLblApplication = GUICtrlCreateLabel("Application", 8, 12, 78, 17)
 $hLblVersion = GUICtrlCreateLabel("Version Name", 8, 36, 78, 17)
 $hLblVersionCode = GUICtrlCreateLabel("Version Code", 8, 60, 78, 17)
@@ -301,27 +303,48 @@ Func _translateSDKLevel($prmSDKLevel, $prmReturnCodeName = False)
 	Switch String($prmSDKLevel)
 		;You can see uses-sdk on "https://developer.android.com/guide/topics/manifest/uses-sdk-element.html"
 		;or "https://developer.android.com/reference/android/os/Build.VERSION_CODES.html"
-	    Case "31"
+		Case "38"
+			$sVersion = "18"
+			$sCodeName = "Android18"
+		Case "37"
+			$sVersion = "17"
+			$sCodeName = "Android17"
+		Case "36"
+			$sVersion = "16"
+			$sCodeName = "Android16"
+		Case "35"
+			$sVersion = "15"
+			$sCodeName = "Vanilla Ice Cream"
+		Case "34"
+			$sVersion = "14"
+			$sCodeName = "Upside Down Cake"
+		Case "33"
+			$sVersion = "13"
+			$sCodeName = "Tiramisu"
+		Case "32"
+			$sVersion = "12L"
+			$sCodeName = "Snow Cone V2"
+		Case "31"
 			$sVersion = "12"
-			$sCodeName = "Android12"
-	    Case "30"
+			$sCodeName = "Snow Cone"
+		Case "30"
 			$sVersion = "11"
-			$sCodeName = "Android11"
-	    Case "29"
+			$sCodeName = "Red Velvet Cake"
+		Case "29"
 			$sVersion = "10"
-			$sCodeName = "Android10"
+			$sCodeName = "Quince Tart"
 		Case "28"
 			$sVersion = "9"
 			$sCodeName = "Pie"
 		Case "27"
 			$sVersion = "8.1.0"
-			$sCodeName = "Oreo"
+			$sCodeName = "Oreo MR1"
 		Case "26"
 			$sVersion = "8.0.0"
 			$sCodeName = "Oreo"
 		Case "25"
 			$sVersion = "7.1"
-			$sCodeName = "Nougat"
+			$sCodeName = "Nougat MR1"
 		Case "24"
 			$sVersion = "7.0"
 			$sCodeName = "Nougat"

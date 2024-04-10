@@ -1,15 +1,13 @@
 # APK-Info
 
 ## 介绍
-APK-Info 为一款在windows下查看 apk 信息的小工具.
+APK-Info 为一款在 windows 下查看 apk 信息的小工具.
 
 
 ## 功能
 * 应用信息显示
 * 应用 md5 显示
 * 支持中文应用名
-* 支持最新安卓9.0应用
-
 
 ## 运行相关
 仅在windows系统下运行,其他系统不支持.
